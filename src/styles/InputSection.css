@@ -1,3 +1,158 @@
 .input-section {
-  /* color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  font-family: monospace;
+}
+
+.input-division,
+.input-division > form {
+  padding: 1rem;
+  border: 1px solid grey;
+  border-radius: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.input-division div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+hr {
+  width: 100%;
+}
+/* hr {
+  color: gray;
+  border-style: inset;
+  border-width: 1px;
+  margin: 0.5em auto;
+} */
+
+.input-division label {
+  font-weight: 700;
+}
+
+.input-division .input-name {
+  width: 60%;
+}
+
+input {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 1.8rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+textarea {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.input-division .input-photo {
+  width: 34%;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 2px solid green;
+  border-radius: 5px;
+  /* height: 1.8rem; */
+  padding: 0.2rem 0.5rem 0.5rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.custom-file-upload:hover {
+  background-color: green;
+  color: white;
+}
+
+.input-division .input-email,
+.input-division .input-phone {
+  width: 47%;
+}
+.input-division .input-date {
+  width: 46%;
+}
+
+.input-division .mini-form-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin-top: 1rem;
+}
+
+.mini-form-buttons button {
+  background-color: white;
+  width: 5rem;
+  height: 2rem;
+
+  border: 3px solid transparent;
+  box-shadow: 1px 1px 1px 1px black;
+  border-radius: 7px;
+}
+
+.mini-form-buttons :first-child {
+  border-color: lightblue;
+}
+.mini-form-buttons :first-child:hover {
+  background-color: lightblue;
+}
+
+.mini-form-buttons :nth-child(2) {
+  border-color: lightgreen;
+}
+.mini-form-buttons :nth-child(2):hover {
+  background-color: lightgreen;
+}
+
+.mini-form-buttons :nth-child(3) {
+  border-color: lightcoral;
+}
+.mini-form-buttons :nth-child(3):hover {
+  background-color: lightcoral;
+}
+
+.mini-form-buttons button:hover {
+  color: white;
+  font-weight: 600;
+}
+.mini-form-buttons button:active {
+  box-shadow: none;
+}
+
+.add-mini-form-button {
+  width: 100%;
+  margin: 1rem 3rem;
+  border: 3px solid dimgray;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 1px 1px 4px 1px black;
+  /* font-size: 0.9rem; */
+  font-weight: 600;
+
+  height: 2.3rem;
+}
+
+.add-mini-form-button:hover {
+  background-color: dimgray;
+  color: white;
+}
+
+.add-mini-form-button:active {
+  box-shadow: none;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s;
 }
