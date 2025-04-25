@@ -5,11 +5,16 @@ import OptionsSection from "./components/OptionsSection";
 
 function App() {
   return (
-    <div className="container">
-      <InputSection />
-      <PreviewSection />
-      <OptionsSection />
-    </div>
+    <>
+      <header>
+        <h1>Resume Generator</h1>
+      </header>
+      <main className="container">
+        <InputSection />
+        <PreviewSection />
+        <OptionsSection />
+      </main>
+    </>
   );
 }
 
