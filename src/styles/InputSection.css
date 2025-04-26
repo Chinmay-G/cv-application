@@ -2,7 +2,7 @@
   background-color: whitesmoke;
   padding: 1rem;
   /* position: static; */
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -27,6 +27,18 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.input-division .input-division-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.input-division-heading :nth-child(3) {
+  margin-left: auto;
 }
 
 hr {
@@ -64,21 +76,29 @@ textarea {
   width: 34%;
 }
 
+#camera {
+  margin-right: 6px;
+}
+
 input[type="file"] {
   display: none;
 }
 
 .custom-file-upload {
-  border: 2px solid green;
+  border: 2px solid blueviolet;
   border-radius: 5px;
   /* height: 1.8rem; */
   padding: 0.2rem 0.5rem 0.5rem 0.5rem;
   cursor: pointer;
   transition: all 0.5s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-file-upload:hover {
-  background-color: green;
+  background-color: blueviolet;
   color: white;
 }
 

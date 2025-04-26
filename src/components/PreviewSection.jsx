@@ -1,23 +1,41 @@
 import "../styles/PreviewSection.css";
 
-export default function PreviewSection() {
+export default function PreviewSection({
+  personalDetails,
+  education,
+  experience,
+}) {
   return (
     <section className="preview-section">
       <div className="preview-container">
         <div className="preview-personal blue">
-          <h1>Name Here</h1>
-          <p>name@gmail.com | +91928829029 | Bangalore, Karnataka India</p>
+          {personalDetails.photo && (
+            <img
+              src={
+                typeof personalDetails.photo === "string"
+                  ? personalDetails.photo
+                  : URL.createObjectURL(personalDetails.photo)
+              }
+            />
+          )}
+          <h1>{personalDetails.name}</h1>
+          <p>
+            {personalDetails.email} {personalDetails.phone && "|"}
+            {"  "}
+            {personalDetails.phone} {personalDetails.address && "|"}
+            {"  "}
+            {personalDetails.address}
+          </p>
         </div>
 
         <hr />
 
-        <div>
-          <h2>Summary</h2>
-          <p>
-            Experienced web developer with a strong background in frontend and
-            backend development.
-          </p>
-        </div>
+        {personalDetails.summary && (
+          <div>
+            <h2>Summary</h2>
+            <p>{personalDetails.summary}</p>
+          </div>
+        )}
 
         <div>
           <h2>Education</h2>
