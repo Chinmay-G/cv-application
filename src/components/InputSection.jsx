@@ -1,44 +1,10 @@
+import { useState } from "react";
 import "../styles/InputSection.css";
 
 export default function InputSection() {
   return (
     <section className="input-section">
-      <div className="input-division personal-details">
-        <div style={{ width: "100%" }}>
-          <h2>
-            👤 Personal Details<button>🔽</button>
-          </h2>
-          {/* <div>⬇</div> */}
-          <hr />
-        </div>
-        <div className="input-name">
-          <label>Full Name</label>
-          <input id="name" type="text" />
-        </div>
-        <div className="input-photo">
-          <label>Photo</label>
-          <label for="file-upload" class="custom-file-upload">
-            📸 Upload
-          </label>
-          <input id="file-upload" accept="image/*" type="file" name="photo" />
-        </div>
-        <div className="input-email">
-          <label>Email</label>
-          <input id="email" type="email" />
-        </div>
-        <div className="input-phone">
-          <label>Phone</label>
-          <input id="phone" type="text" />
-        </div>
-        <div>
-          <label>Address</label>
-          <input type="text" name="address" />
-        </div>
-        <div>
-          <label>Summary</label>
-          <textarea rows="3" />
-        </div>
-      </div>
+      <InputPersonalDetails />
 
       <div className="input-division education">
         <div>
@@ -117,5 +83,113 @@ export default function InputSection() {
         <button className="add-mini-form-button">+ Experience</button>
       </div>
     </section>
+  );
+}
+
+function InputPersonalDetails() {
+  const [personalDetails, setPersonalDetails] = useState({
+    name: "",
+    photo: "",
+    email: "",
+    phone: "",
+    address: "",
+    summary: "",
+  });
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setPersonalDetails((details) => ({ ...details, [name]: value }));
+  }
+
+  return (
+    <div className="input-division personal-details">
+      <div
+        style={{ width: "100%", cursor: "pointer" }}
+        onClick={() => setIsOpen((cur) => !cur)}
+      >
+        <h2>
+          👤 Personal Details
+          <span>{isOpen ? "🔺" : "🔻"}</span>
+        </h2>
+        {/* <div>⬇</div> */}
+        <hr />
+      </div>
+      {isOpen && (
+        <>
+          <div className="input-name">
+            <label>Full Name</label>
+            <input
+              id="name"
+              type="text"
+              value={personalDetails.name}
+              onChange={(e) =>
+                setPersonalDetails((details) => ({
+                  ...details,
+                  name: e.target.value,
+                }))
+              }
+            />
+          </div>
+          <div className="input-photo">
+            <label>Photo</label>
+            <label for="file-upload" class="custom-file-upload">
+              📸 Upload
+            </label>
+            <input
+              id="file-upload"
+              accept="image/*"
+              type="file"
+              name="photo"
+              onChange={(e) =>
+                setPersonalDetails((details) => ({
+                  ...details,
+                  photo: e.target.files[0],
+                }))
+              }
+            />
+          </div>
+          <div className="input-email">
+            <label>Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={personalDetails.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="input-phone">
+            <label>Phone</label>
+            <input
+              id="phone"
+              type="text"
+              name="phone"
+              value={personalDetails.phone}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label>Address</label>
+            <input
+              type="text"
+              name="address"
+              value={personalDetails.address}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label>Summary</label>
+            <textarea
+              rows="3"
+              name="summary"
+              value={personalDetails.summary}
+              onChange={handleChange}
+            />
+          </div>
+        </>
+      )}
+    </div>
   );
 }

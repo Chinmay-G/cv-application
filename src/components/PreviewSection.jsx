@@ -1,3 +1,5 @@
+import "../styles/PreviewSection.css";
+
 export default function PreviewSection() {
   return (
     <section className="preview-section">

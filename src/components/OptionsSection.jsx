@@ -1,3 +1,5 @@
+import "../styles/OptionsSection.css";
+
 export default function OptionsSection() {
   return (
     <section className="options-section">

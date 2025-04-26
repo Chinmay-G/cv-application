@@ -1,4 +1,9 @@
 .input-section {
+  background-color: whitesmoke;
+  padding: 1rem;
+  /* position: static; */
+  overflow-y: scroll;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -8,6 +13,7 @@
 
 .input-division,
 .input-division > form {
+  background-color: white;
   padding: 1rem;
   border: 1px solid grey;
   border-radius: 10px;
