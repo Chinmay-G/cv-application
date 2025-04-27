@@ -3,10 +3,29 @@ import {} from "lucide-react";
 import InputDivisionHeading from "./InputDivisionHeading";
 import EducationForm from "./EducationForm";
 
-export default function InputEducation() {
+export default function InputEducation({ education, setEducation }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [numForms, setNumForms] = useState(0);
-  const arr = new Array(numForms).fill(null);
+
+  function handleChange(e, index) {
+    const { name, value } = e.target;
+    const updatedEdu = [...education];
+    updatedEdu[index][name] = value;
+    setEducation(updatedEdu);
+  }
+
+  function addNewEducation() {
+    setEducation([
+      ...education,
+      {
+        degree: "",
+        school: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+        visible: true,
+      },
+    ]);
+  }
 
   return (
     <div className="input-division education">
@@ -16,14 +35,16 @@ export default function InputEducation() {
       {isOpen && (
         <>
           <hr />
-          {arr.map((_, i) => (
-            <EducationForm index={i} />
+          {education.map((_, i) => (
+            <EducationForm
+              key={i}
+              education={education[i]}
+              handleChange={handleChange}
+              index={i}
+            />
           ))}
-          {/* <EducationForm /> */}
-          <button
-            className="add-mini-form-button"
-            onClick={() => setNumForms((numForms) => numForms + 1)}
-          >
+
+          <button className="add-mini-form-button" onClick={addNewEducation}>
             + Education
           </button>
         </>

@@ -7,8 +7,8 @@ import { useState } from "react";
 function App() {
   const sampleData = {
     personalDetails: {},
-    education: [{}],
-    experience: [{}],
+    education: [],
+    experience: [],
   };
 
   const [allData, setAllData] = useState(sampleData);

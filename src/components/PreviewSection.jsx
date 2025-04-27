@@ -37,23 +37,23 @@ export default function PreviewSection({
           </div>
         )}
 
-        <div>
-          <h2>Education</h2>
-
+        {education.length > 0 && (
           <div>
-            <h3>
-              BE Computer Science & Engineering @ Jyothy Institute of Technology
-            </h3>
-            <p>2021 - 2025</p>
-            <p>Bangalore</p>
-          </div>
+            <h2>Education</h2>
 
-          <div>
-            <h3>Pre-University @ RNS Institute of Technology</h3>
-            <p>2019 - 2021</p>
-            <p>Bangalore</p>
+            <div>
+              <h3>{education[0].degree}</h3>
+              <p>2021 - 2025</p>
+              <p>Bangalore</p>
+            </div>
+
+            <div>
+              <h3>Pre-University @ RNS Institute of Technology</h3>
+              <p>2019 - 2021</p>
+              <p>Bangalore</p>
+            </div>
           </div>
-        </div>
+        )}
 
         <div>
           <h2>Experience</h2>

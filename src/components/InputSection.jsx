@@ -20,6 +20,10 @@ export default function InputSection({ allData, setAllData }) {
     }));
   }
 
+  function setEducation(educationData) {
+    setAllData((allData) => ({ ...allData, education: educationData }));
+  }
+
   return (
     <section className="input-section">
       <InputPersonalDetails
@@ -27,7 +31,10 @@ export default function InputSection({ allData, setAllData }) {
         handleChange={handlePersonalDetailsChange}
         handlePhotoChange={handlePhotoChange}
       />
-      <InputEducation />
+      <InputEducation
+        education={allData.education}
+        setEducation={setEducation}
+      />
       <InputExperience />
     </section>
   );
