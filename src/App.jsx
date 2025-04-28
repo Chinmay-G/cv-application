@@ -10,7 +10,7 @@ import html2pdf from "html2pdf.js";
 
 function App() {
   const [allData, setAllData] = useState(sampleData);
-  const [themeColor, setThemeColor] = useState("#262");
+  const [themeColor, setThemeColor] = useState("#000000");
   const targetRef = useRef();
 
   const emptyData = {
