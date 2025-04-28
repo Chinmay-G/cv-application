@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {} from "lucide-react";
+import { Key } from "lucide-react";
 import InputDivisionHeading from "./InputDivisionHeading";
 import EducationForm from "./EducationForm";
 
@@ -29,6 +29,7 @@ export default function InputEducation({ education, setEducation }) {
         endDate: "",
         location: "",
         visible: true,
+        key: crypto.randomUUID(),
       },
     ]);
   }
@@ -48,7 +49,7 @@ export default function InputEducation({ education, setEducation }) {
           <hr />
           {education.map((_, i) => (
             <EducationForm
-              // key={i}
+              key={education[i].key}
               education={education[i]}
               handleChange={handleChange}
               handleVisibility={handleVisibility}

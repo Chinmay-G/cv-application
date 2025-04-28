@@ -1,14 +1,6 @@
-import {
-  ChevronsDown,
-  ChevronsUp,
-  ChevronUp,
-  ChevronDown,
-  Eye,
-  EyeOff,
-  Trash2,
-  BookCheck,
-} from "lucide-react";
+import { ChevronsDown, ChevronsUp, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
+import MiniFormButtons from "./MiniFormButtons";
 
 export default function EducationForm({
   education,
@@ -87,20 +79,12 @@ export default function EducationForm({
               onChange={onChange}
             />
           </div>
-          <div className="mini-form-buttons">
-            <button
-              className="delete-button"
-              onClick={() => handleDelete(index)}
-            >
-              <Trash2 size={18} /> Delete
-            </button>
-            <button
-              className="done-button"
-              onClick={() => setIsOpen((is) => !is)}
-            >
-              <BookCheck size={18} /> Done/Close
-            </button>
-          </div>
+
+          <MiniFormButtons
+            handleDelete={handleDelete}
+            index={index}
+            setIsOpen={setIsOpen}
+          />
         </>
       )}
     </form>

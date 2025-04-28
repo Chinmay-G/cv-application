@@ -45,12 +45,41 @@ export default function PreviewSection({
               {education.map(
                 (_, i) =>
                   education[i].visible && (
-                    <div>
-                      <h3>{education[i].degree}</h3>
+                    <div key={education[i].key}>
+                      <h3>
+                        {education[i].degree} {education[i].school && "@"}{" "}
+                        {education[i].school}
+                      </h3>
                       <p>
-                        {education[i].startDate} - {education[i].endDate}
+                        {education[i].startDate} {education[i].endDate && "-"}{" "}
+                        {education[i].endDate}
                       </p>
                       <p>{education[i].location}</p>
+                    </div>
+                  )
+              )}
+            </div>
+          )}
+
+        {experience.length > 0 &&
+          !experience.every((exp) => exp.visible === false) && (
+            <div>
+              <h2>Experience</h2>
+
+              {experience.map(
+                (_, i) =>
+                  experience[i].visible && (
+                    <div key={experience[i].key}>
+                      <h3>
+                        {experience[i].jobTitle} {experience[i].company && "@"}{" "}
+                        {experience[i].company}
+                      </h3>
+                      <p>
+                        {experience[i].startDate} {experience[i].endDate && "-"}{" "}
+                        {experience[i].endDate}
+                      </p>
+                      <p>{experience[i].location}</p>
+                      <p>{experience[i].description}</p>
                     </div>
                   )
               )}
