@@ -37,24 +37,25 @@ export default function PreviewSection({
           </div>
         )}
 
-        {education.length > 0 && (
-          <div>
-            <h2>Education</h2>
+        {education.length > 0 &&
+          !education.every((edu) => edu.visible === false) && (
+            <div>
+              <h2>Education</h2>
 
-            {education.map(
-              (_, i) =>
-                education[i].visible && (
-                  <div>
-                    <h3>{education[i].degree}</h3>
-                    <p>
-                      {education[i].startDate} - {education[i].endDate}
-                    </p>
-                    <p>{education[i].location}</p>
-                  </div>
-                )
-            )}
-          </div>
-        )}
+              {education.map(
+                (_, i) =>
+                  education[i].visible && (
+                    <div>
+                      <h3>{education[i].degree}</h3>
+                      <p>
+                        {education[i].startDate} - {education[i].endDate}
+                      </p>
+                      <p>{education[i].location}</p>
+                    </div>
+                  )
+              )}
+            </div>
+          )}
 
         <div>
           <h2>Experience</h2>

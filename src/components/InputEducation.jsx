@@ -33,7 +33,10 @@ export default function InputEducation({ education, setEducation }) {
     ]);
   }
 
-  function handleDeleteEducation(index) {}
+  function handleDeleteEducation(index) {
+    const updatedEdu = [...education];
+    setEducation(updatedEdu.filter((edu, i) => index !== i));
+  }
 
   return (
     <div className="input-division education">
@@ -45,10 +48,11 @@ export default function InputEducation({ education, setEducation }) {
           <hr />
           {education.map((_, i) => (
             <EducationForm
-              key={i}
+              // key={i}
               education={education[i]}
               handleChange={handleChange}
               handleVisibility={handleVisibility}
+              handleDelete={handleDeleteEducation}
               index={i}
             />
           ))}
