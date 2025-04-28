@@ -1,61 +1,108 @@
-export default function EducationForm({ education, handleChange, index }) {
+import {
+  ChevronsDown,
+  ChevronsUp,
+  ChevronUp,
+  ChevronDown,
+  Eye,
+  EyeOff,
+  Trash2,
+  BookCheck,
+} from "lucide-react";
+import { useState } from "react";
+
+export default function EducationForm({
+  education,
+  handleChange,
+  handleVisibility,
+  handleDelete,
+  index,
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
   function onChange(e) {
     handleChange(e, index);
   }
 
   return (
     <form>
-      <h3>{education.degree ? education.degree : "Designation"}</h3>
-      <div>
-        <label>Degree</label>
-        <input
-          type="text"
-          name="degree"
-          value={education.degree}
-          onChange={onChange}
-        />
+      <div className="form-heading">
+        <div onClick={() => setIsOpen((is) => !is)}>
+          <h3>
+            {education.degree ? education.degree : "Untitled Designation"}
+          </h3>
+          <span>
+            {isOpen ? <ChevronsUp size={18} /> : <ChevronsDown size={18} />}
+          </span>
+        </div>
+
+        <span value={education.visible} onClick={() => handleVisibility(index)}>
+          {education.visible ? <Eye /> : <EyeOff />}
+        </span>
       </div>
-      <div>
-        <label>School</label>
-        <input
-          type="text"
-          name="school"
-          value={education.school}
-          onChange={onChange}
-        />
-      </div>
-      <div className="input-date">
-        <label>Start Date</label>
-        <input
-          type="text"
-          name="startDate"
-          value={education.startDate}
-          onChange={onChange}
-        />
-      </div>
-      <div className="input-date">
-        <label>End Date</label>
-        <input
-          type="text"
-          name="endDate"
-          value={education.endDate}
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <label>Location</label>
-        <input
-          type="text"
-          name="location"
-          value={education.location}
-          onChange={onChange}
-        />
-      </div>
-      <div className="mini-form-buttons">
-        <button className="delete-button">🗑️ Delete</button>
-        <button className="save-button">✔️ Save</button>
-        <button className="close-button">❌ Close</button>
-      </div>
+
+      {isOpen && (
+        <>
+          <div>
+            <label>Degree</label>
+            <input
+              type="text"
+              name="degree"
+              value={education.degree}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label>School</label>
+            <input
+              type="text"
+              name="school"
+              value={education.school}
+              onChange={onChange}
+            />
+          </div>
+          <div className="input-date">
+            <label>Start Date</label>
+            <input
+              type="text"
+              name="startDate"
+              value={education.startDate}
+              onChange={onChange}
+            />
+          </div>
+          <div className="input-date">
+            <label>End Date</label>
+            <input
+              type="text"
+              name="endDate"
+              value={education.endDate}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label>Location</label>
+            <input
+              type="text"
+              name="location"
+              value={education.location}
+              onChange={onChange}
+            />
+          </div>
+          <div className="mini-form-buttons">
+            <button
+              className="delete-button"
+              onClick={() => handleDelete(index)}
+            >
+              <Trash2 size={18} /> Delete
+            </button>
+            <button
+              className="done-button"
+              onClick={() => setIsOpen((is) => !is)}
+            >
+              <BookCheck size={18} /> Done/Close
+            </button>
+          </div>
+        </>
+      )}
     </form>
   );
 }

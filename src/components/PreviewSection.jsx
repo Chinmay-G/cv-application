@@ -41,17 +41,18 @@ export default function PreviewSection({
           <div>
             <h2>Education</h2>
 
-            <div>
-              <h3>{education[0].degree}</h3>
-              <p>2021 - 2025</p>
-              <p>Bangalore</p>
-            </div>
-
-            <div>
-              <h3>Pre-University @ RNS Institute of Technology</h3>
-              <p>2019 - 2021</p>
-              <p>Bangalore</p>
-            </div>
+            {education.map(
+              (_, i) =>
+                education[i].visible && (
+                  <div>
+                    <h3>{education[i].degree}</h3>
+                    <p>
+                      {education[i].startDate} - {education[i].endDate}
+                    </p>
+                    <p>{education[i].location}</p>
+                  </div>
+                )
+            )}
           </div>
         )}
 

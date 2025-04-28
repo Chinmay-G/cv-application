@@ -23,6 +23,10 @@
   gap: 1rem;
 }
 
+.input-division > form {
+  width: 100%;
+}
+
 .input-division div {
   display: flex;
   flex-direction: column;
@@ -110,42 +114,60 @@ input[type="file"] {
   width: 46%;
 }
 
+.input-division .form-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+
+  cursor: pointer;
+}
+
+.form-heading > span {
+  margin-left: auto;
+}
+.form-heading > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
 .input-division .mini-form-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
   margin-top: 1rem;
 }
 
 .mini-form-buttons button {
   background-color: white;
-  width: 5rem;
+  width: 7.5rem;
   height: 2rem;
 
   border: 3px solid transparent;
   box-shadow: 1px 1px 1px 1px black;
   border-radius: 7px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.mini-form-buttons :first-child {
-  border-color: lightblue;
+.mini-form-buttons .delete-button {
+  border-color: rgb(255, 89, 89);
 }
-.mini-form-buttons :first-child:hover {
-  background-color: lightblue;
-}
-
-.mini-form-buttons :nth-child(2) {
-  border-color: lightgreen;
-}
-.mini-form-buttons :nth-child(2):hover {
-  background-color: lightgreen;
+.mini-form-buttons .delete-button:hover {
+  background-color: rgb(255, 89, 89);
 }
 
-.mini-form-buttons :nth-child(3) {
-  border-color: lightcoral;
+.mini-form-buttons .done-button {
+  border-color: rgb(105, 238, 105);
 }
-.mini-form-buttons :nth-child(3):hover {
-  background-color: lightcoral;
+.mini-form-buttons .done-button:hover {
+  background-color: rgb(105, 238, 105);
 }
 
 .mini-form-buttons button:hover {

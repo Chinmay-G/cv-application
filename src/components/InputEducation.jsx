@@ -13,6 +13,12 @@ export default function InputEducation({ education, setEducation }) {
     setEducation(updatedEdu);
   }
 
+  function handleVisibility(index) {
+    const updatedEdu = [...education];
+    updatedEdu[index].visible = !updatedEdu[index].visible;
+    setEducation(updatedEdu);
+  }
+
   function addNewEducation() {
     setEducation([
       ...education,
@@ -27,6 +33,8 @@ export default function InputEducation({ education, setEducation }) {
     ]);
   }
 
+  function handleDeleteEducation(index) {}
+
   return (
     <div className="input-division education">
       <InputDivisionHeading isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -40,6 +48,7 @@ export default function InputEducation({ education, setEducation }) {
               key={i}
               education={education[i]}
               handleChange={handleChange}
+              handleVisibility={handleVisibility}
               index={i}
             />
           ))}
