@@ -20,7 +20,7 @@ export default function ExperienceForm({
       <div className="form-heading">
         <div onClick={() => setIsOpen((is) => !is)}>
           <h3>
-            {experience.degree ? experience.degree : "Untitled Designation"}
+            {experience.jobTitle ? experience.jobTitle : "Untitled Designation"}
           </h3>
           <span>
             {isOpen ? <ChevronsUp size={18} /> : <ChevronsDown size={18} />}

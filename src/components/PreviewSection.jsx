@@ -4,11 +4,12 @@ export default function PreviewSection({
   personalDetails,
   education,
   experience,
+  targetRef,
 }) {
   return (
     <section className="preview-section">
-      <div className="preview-container">
-        <div className="preview-personal blue">
+      <div className="preview-container" ref={targetRef}>
+        <div className="preview-personal">
           {personalDetails.photo && (
             <img
               src={
@@ -18,7 +19,7 @@ export default function PreviewSection({
               }
             />
           )}
-          <h1>{personalDetails.name}</h1>
+          <h1>{personalDetails.name ? personalDetails.name : "Your Name"}</h1>
           <p>
             {personalDetails.email} {personalDetails.phone && "|"}
             {"  "}
@@ -31,8 +32,9 @@ export default function PreviewSection({
         <hr />
 
         {personalDetails.summary && (
-          <div>
+          <div className="summary">
             <h2>Summary</h2>
+            <hr />
             <p>{personalDetails.summary}</p>
           </div>
         )}
@@ -41,6 +43,7 @@ export default function PreviewSection({
           !education.every((edu) => edu.visible === false) && (
             <div>
               <h2>Education</h2>
+              <hr />
 
               {education.map(
                 (_, i) =>
@@ -65,6 +68,7 @@ export default function PreviewSection({
           !experience.every((exp) => exp.visible === false) && (
             <div>
               <h2>Experience</h2>
+              <hr />
 
               {experience.map(
                 (_, i) =>
@@ -85,24 +89,6 @@ export default function PreviewSection({
               )}
             </div>
           )}
-
-        <div>
-          <h2>Experience</h2>
-
-          <div>
-            <h3>Jr. Software Developer @ ABC Tech.</h3>
-            <p>2024 - Present</p>
-            <p>Remote</p>
-            <p>Works on scalable React applications and integrated APIs.</p>
-          </div>
-
-          <div>
-            <h3>Freelance Developer @ Random</h3>
-            <p>2023 - 2024</p>
-            <p>Bangalore</p>
-            <p>Works on scalable React applications and integrated APIs.</p>
-          </div>
-        </div>
       </div>
     </section>
   );

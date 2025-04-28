@@ -3,12 +3,16 @@
   padding: 1rem;
   /* position: static; */
   overflow-y: auto;
-  height: 80vh;
+  height: 83vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
   font-family: monospace;
+}
+
+.input-division {
+  box-shadow: 2px 2px 5px 2px gray;
 }
 
 .input-division,
