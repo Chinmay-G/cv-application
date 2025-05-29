@@ -57,6 +57,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .preview-container {
+    height: fit-content;
+  }
   .preview-container * {
     /* font-size: xx-small; */
     font-size: 0.4rem;

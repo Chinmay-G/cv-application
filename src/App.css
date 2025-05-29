@@ -61,7 +61,7 @@ header h1 {
 }
 
 /* For Mobile */
-@media (max-width: 500px) {
+@media only screen and (max-width: 500px) {
   header {
     margin-bottom: 20px;
   }

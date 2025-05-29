@@ -208,3 +208,9 @@ button {
   cursor: pointer;
   transition: all 0.3s;
 }
+
+@media only screen and (max-width: 500px) {
+  .mini-form-buttons button {
+    width: 6rem;
+  }
+}
