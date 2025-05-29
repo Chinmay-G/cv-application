@@ -10,26 +10,28 @@ export default function OptionsSection({
 }) {
   return (
     <section className="options-section">
-      <button onClick={handleLoadExample}>
+      <button id="load" onClick={handleLoadExample}>
         <ScrollText /> Load Example
       </button>
 
-      <button onClick={handleClear}>
+      <button id="clear" onClick={handleClear}>
         <Trash2 /> Clear
       </button>
 
-      <button onClick={handleDownload}>
+      <button id="download" onClick={handleDownload}>
         <Download /> Download
       </button>
 
-      <div className="themeColor"></div>
-      <input
-        type="color"
-        name="colorPicker"
-        id="input-color"
-        value={themeColor}
-        onChange={handleColorChange}
-      />
+      <div className="themeColor">
+        <label for="#input-color">Theme color :</label>
+        <input
+          type="color"
+          name="colorPicker"
+          id="input-color"
+          value={themeColor}
+          onChange={handleColorChange}
+        />
+      </div>
     </section>
   );
 }
