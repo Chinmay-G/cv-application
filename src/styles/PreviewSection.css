@@ -55,3 +55,16 @@
   color: dimgray;
   margin: 0.5rem 0rem;
 }
+
+@media only screen and (max-width: 500px) {
+  .preview-container * {
+    /* font-size: xx-small; */
+    font-size: 0.4rem;
+  }
+  .preview-container > hr {
+    margin-bottom: 0.8rem;
+  }
+  .preview-container div:not(.preview-personal) {
+    margin-bottom: 1rem;
+  }
+}
