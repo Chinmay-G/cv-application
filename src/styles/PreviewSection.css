@@ -14,6 +14,18 @@
   box-shadow: 2px 2px 5px 2px gray;
 }
 
+.preview-personal {
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+.preview-personal img {
+  width: 100px;
+}
+
 .preview-container > hr {
   height: 2px;
   /* color: var(--theme-color); */
@@ -63,6 +75,10 @@
   .preview-container * {
     /* font-size: xx-small; */
     font-size: 0.4rem;
+  }
+
+  .preview-personal img {
+    width: 40px;
   }
   .preview-container > hr {
     margin-bottom: 0.8rem;

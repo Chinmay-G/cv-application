@@ -19,14 +19,16 @@ export default function PreviewSection({
               }
             />
           )}
-          <h1>{personalDetails.name ? personalDetails.name : "Your Name"}</h1>
-          <p>
-            {personalDetails.email} {personalDetails.phone && "|"}
-            {"  "}
-            {personalDetails.phone} {personalDetails.address && "|"}
-            {"  "}
-            {personalDetails.address}
-          </p>
+          <div>
+            <h1>{personalDetails.name ? personalDetails.name : "Your Name"}</h1>
+            <p>
+              {personalDetails.email} {personalDetails.phone && "|"}
+              {"  "}
+              {personalDetails.phone} {personalDetails.address && "|"}
+              {"  "}
+              {personalDetails.address}
+            </p>
+          </div>
         </div>
 
         <hr />
